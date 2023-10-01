@@ -16,16 +16,16 @@ func main() {
 	doneChan := make(chan bool)
 
 	// statt go routine to read user inout and run program
-  go readUserInput(doneChan)
+	go readUserInput(doneChan)
 
 	// block untill doneChan gets a value
-  <- doneChan
+	<-doneChan
 
 	// close the channel
-  close(doneChan)
+	close(doneChan)
 
 	// say goodbye
-  fmt.Println("Goodbye!")
+	fmt.Println("Goodbye!")
 }
 
 func readUserInput(doneChan chan bool) {
